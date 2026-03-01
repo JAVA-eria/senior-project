@@ -1,14 +1,17 @@
 {
   "name": "senior-project",
   "version": "1.0.0",
-  "description": "A very important senior project 😉",
+  "description": "A very important senior project",
   "scripts": {
-    "install-all": "cd client && npm install && cd ../server && npm install",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "start": "cd server && node index.js",
-    "dev": "cd client && npm run dev"
+    "postinstall": "cd client && npm install && cd ../server && npm install"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
   }
 }
