@@ -1,0 +1,352 @@
+/* ============================================
+   CRIMSON & BLACK GOTHIC THEME
+   "Dark Romance" - For Fasih's Birthday
+   ============================================ */
+
+/* CUSTOM FONTS */
+@font-face {
+  font-family: 'Canterbury';
+  src: url('/fonts/Canterbury.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lauren Hensley';
+  src: url('/fonts/LaurenHensley.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pfeffer Medieval';
+  src: url('/fonts/PfefferMediaeval.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Fallback */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ============================================
+   CRIMSON & BLACK COLOR PALETTE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* === BLACKS === */
+  --void: #030303;
+  --abyss: #080808;
+  --obsidian: #0d0d0d;
+  --charcoal: #151515;
+  --dark-grey: #1f1f1f;
+  --slate: #2a2a2a;
+
+  /* === CRIMSON REDS === */
+  --blood: #4a0000;
+  --deep-crimson: #6b0f1a;
+  --crimson: #8b1a2b;
+  --royal-red: #a82335;
+  --scarlet: #c7344c;
+  --rose: #d64550;
+  --soft-rose: #e87d85;
+
+  /* === SILVER ACCENTS === */
+  --aged-silver: #9a9a9a;
+  --silver: #c0c0c0;
+  --pale-silver: #e0e0e0;
+
+  /* === GOLD (very subtle) === */
+  --antique-gold: #b8934d;
+  --pale-gold: #d4b87a;
+
+  /* === TEXT COLORS === */
+  --ghost-white: #f5f5f5;
+  --soft-white: #e8e8e8;
+  --muted: #b0b0b0;
+
+  /* === ATMOSPHERIC === */
+  --torch-glow: #ff6030;
+  --ember: #c44520;
+  --candle: #ffa040;
+
+  /* === FONTS === */
+  --font-heading: 'Canterbury', 'Cinzel', serif;
+  --font-letter: 'Lauren Hensley', 'Crimson Text', cursive;
+  --font-body: 'Pfeffer Medieval', 'Crimson Text', serif;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--void);
+  color: var(--ghost-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--ghost-white);
+}
+
+.letter-text {
+  font-family: var(--font-letter);
+}
+
+p, span, button, input {
+  font-family: var(--font-body);
+}
+
+/* ============================================
+   SCROLLBAR - Crimson Style
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--abyss);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--crimson) 0%, var(--blood) 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--royal-red) 0%, var(--deep-crimson) 100%);
+}
+
+/* ============================================
+   MEDIEVAL BUTTON - Crimson & Black
+   ============================================ */
+
+.medieval-btn {
+  font-family: var(--font-heading);
+  background: linear-gradient(180deg, var(--crimson) 0%, var(--blood) 100%);
+  color: var(--ghost-white);
+  border: 2px solid var(--silver);
+  padding: 16px 45px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 20px rgba(139, 26, 43, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.medieval-btn:hover {
+  background: linear-gradient(180deg, var(--royal-red) 0%, var(--crimson) 100%);
+  border-color: var(--pale-silver);
+  box-shadow: 
+    0 6px 30px rgba(168, 35, 53, 0.5),
+    0 0 40px rgba(139, 26, 43, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.medieval-btn:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 15px rgba(139, 26, 43, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.medieval-btn::before,
+.medieval-btn::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--silver);
+  font-size: 0.7rem;
+}
+
+.medieval-btn::before {
+  left: 14px;
+}
+
+.medieval-btn::after {
+  right: 14px;
+}
+
+/* ============================================
+   PARCHMENT - Aged Dark Style
+   ============================================ */
+
+.parchment-bg {
+  background: linear-gradient(
+    135deg, 
+    #d8d0c0 0%, 
+    #c8bfae 25%, 
+    #d0c7b5 50%, 
+    #c5b9a5 75%, 
+    #cfc5b5 100%
+  );
+  position: relative;
+}
+
+.parchment-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Torch flicker */
+.torch-glow {
+  animation: torchFlicker 3s ease-in-out infinite;
+}
+
+@keyframes torchFlicker {
+  0%, 100% { 
+    filter: 
+      drop-shadow(0 0 20px var(--torch-glow)) 
+      drop-shadow(0 0 40px rgba(255, 96, 48, 0.3))
+      brightness(1); 
+  }
+  25% {
+    filter: 
+      drop-shadow(0 0 25px var(--torch-glow)) 
+      drop-shadow(0 0 50px rgba(255, 96, 48, 0.4))
+      brightness(1.1); 
+  }
+  50% { 
+    filter: 
+      drop-shadow(0 0 30px var(--candle)) 
+      drop-shadow(0 0 60px rgba(255, 160, 64, 0.4))
+      brightness(1.15); 
+  }
+  75% {
+    filter: 
+      drop-shadow(0 0 22px var(--torch-glow)) 
+      drop-shadow(0 0 45px rgba(255, 96, 48, 0.35))
+      brightness(1.05); 
+  }
+}
+
+/* Crimson glow pulse */
+@keyframes crimsonGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(139, 26, 43, 0.4),
+      0 0 40px rgba(107, 15, 26, 0.2); 
+  }
+  50% { 
+    box-shadow: 
+      0 0 35px rgba(168, 35, 53, 0.5),
+      0 0 70px rgba(139, 26, 43, 0.3),
+      0 0 100px rgba(74, 0, 0, 0.2); 
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Subtle pulse */
+@keyframes subtlePulse {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+/* Blood drip glow for text */
+@keyframes bloodGlow {
+  0%, 100% { 
+    text-shadow: 
+      0 0 10px rgba(139, 26, 43, 0.5),
+      0 0 20px rgba(107, 15, 26, 0.3);
+  }
+  50% { 
+    text-shadow: 
+      0 0 15px rgba(168, 35, 53, 0.6),
+      0 0 30px rgba(139, 26, 43, 0.4),
+      0 0 45px rgba(74, 0, 0, 0.2);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.crimson-glow {
+  animation: crimsonGlow 4s ease-in-out infinite;
+}
+
+.blood-text {
+  animation: bloodGlow 3s ease-in-out infinite;
+}
+
+.subtle-pulse {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Text shadows */
+.shadow-dark {
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-crimson {
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(139, 26, 43, 0.4),
+    0 0 40px rgba(74, 0, 0, 0.2);
+}
+
+.shadow-glow {
+  text-shadow: 
+    0 0 10px rgba(139, 26, 43, 0.6),
+    0 0 20px rgba(139, 26, 43, 0.4),
+    0 0 30px rgba(139, 26, 43, 0.2);
+}
+
+/* ============================================
+   SELECTION COLORS
+   ============================================ */
+
+::selection {
+  background: var(--crimson);
+  color: var(--ghost-white);
+}
+
+::-moz-selection {
+  background: var(--crimson);
+  color: var(--ghost-white);
+}
